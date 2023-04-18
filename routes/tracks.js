@@ -7,10 +7,10 @@ const { getItems, getItem, createItem } = require("../controllers/tracks");
 /**Lista Item */
 router.get("/", getItems);
 
-/**Ibtener detalle */
+/**Obtener detalle */
 router.get("/:id", getItem);
 
 /**Crear item */
-router.post("/", validatorCreateItem, customHeader, createItem);
+router.post("/", validatorCreateItem, createItem);
 
 module.exports = router
