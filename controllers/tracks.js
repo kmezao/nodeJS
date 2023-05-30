@@ -27,10 +27,12 @@ const getItems = async (req, res) => {
  */
 const getItem = async (req, res) => {
     try{
+        const user = req.user
+        console.log(user)
         req = matchedData(req);
         const {id} = req;
         const data = await tracksModel.findById(id);
-        res.send({data})
+        res.send({data, user})
     } catch(e){
         handleHttpError(res, "ERROR_GET_ITEM")
     }
